@@ -70,7 +70,7 @@ function getRandomInt(min, max) {
     attempts++;
     if (bombs.includes(num)) {
       this.style.backgroundColor = "red";
-      this.innerHTML = ``;
+      this.innerHTML = `<i class="fa-solid fa-bomb"></i>`;
       gameOver();
     } else {
       this.style.backgroundColor = "#6495ed";
