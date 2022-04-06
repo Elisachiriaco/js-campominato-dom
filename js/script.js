@@ -78,7 +78,16 @@ function getRandomInt(min, max) {
     this.classList.remove("pointer");
     this.removeEventListener("click", coloraCella);
   }
-  function gameOver() {}
-  //document.getElementById("level").addEventListener("change", setLevel);
+
+  function gameOver() {
+    let caselle = document.getElementsByClassName('box');
+    for(let i = 0; i < caselle.length;i ++){
+      if(bombs.includes(parseInt(caselle[i].innerText))){
+        caselle[i].style.backgroundColor = 'red';
+        caselle[i].innerHTML =  `<i class="fa-solid fa-bomb"></i>`
+      }
+    }
+  };
+
   document.getElementById("play").addEventListener("click", setLevel);
   
